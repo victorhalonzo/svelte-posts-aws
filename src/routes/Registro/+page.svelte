@@ -15,7 +15,7 @@
 		if (pass == pass2) {
 			const form = document.getElementById('registroForm');
 			axios
-				.post('http://52.1.221.183/sveltephp/login/registro.php', new FormData(form))
+				.post('/api/login/registro.php', new FormData(form))
 				.then((res) => {
 					console.log(res);
 					if (res.data == 'success') {
@@ -34,7 +34,7 @@
 		if (email != '') {
 			const datosEmail = new FormData();
 			datosEmail.append('email', email);
-			axios.post('http://52.1.221.183/sveltephp/login/validarEmail.php', datosEmail).then((res) => {
+			axios.post('/api/login/validarEmail.php', datosEmail).then((res) => {
 				console.log(res);
 				if (res.data === 'success') {
 					show = true;

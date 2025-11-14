@@ -17,7 +17,7 @@
 	let post = {};
 
 	function getPost() {
-		axios.get('http://52.1.221.183/sveltephp/posts/post.php?id=' + id).then((res) => {
+		axios.get('/api/posts/post.php?id=' + id).then((res) => {
 			post = res.data;
 		});
 	}
@@ -25,7 +25,7 @@
 	function editar() {
 		const form = document.getElementById('formEditar');
 		axios
-			.post('http://52.1.221.183/sveltephp/posts/editarPost.php', new FormData(form))
+			.post('/api/posts/editarPost.php', new FormData(form))
 			.then((res) => {
 				if (res.data == 'success') {
 					Swal.fire('Muy bien', 'Tu post fue editado', 'success');
@@ -48,7 +48,7 @@
 			confirmButtonText: 'Sí, bórralo.'
 		}).then((result) => {
 			if (result.value) {
-				axios.post('http://52.1.221.183/sveltephp/posts/eliminar.php?id=' + id).then((res) => {
+				axios.post('/api/posts/eliminar.php?id=' + id).then((res) => {
 					Swal.fire({
 						title: 'Borrado!',
 						text: 'Tu post ha sido borrado',

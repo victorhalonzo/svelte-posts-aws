@@ -7,7 +7,7 @@
         const tokenphp = JSON.parse(localStorage.getItem("token"));
         axios
             .post(
-                "http://52.1.221.183/sveltephp/login/salir.php?token=" + tokenphp,
+                "/api/login/salir.php?token=" + tokenphp,
             )
             .then((res) => {
                 if (res.data == "success") {

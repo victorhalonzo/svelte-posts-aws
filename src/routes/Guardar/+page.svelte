@@ -19,7 +19,7 @@
 
 	function guardar() {
 		const form = document.getElementById('formGuardar');
-		axios.post('http://52.1.221.183/sveltephp/posts/altaPost.php', new FormData(form)).then((res) => {
+		axios.post('/api/posts/altaPost.php', new FormData(form)).then((res) => {
 			if (res.data == 'success') {
 				Swal.fire('Muy bien', 'Tu post fue guardado', 'success');
 				goto('/');
