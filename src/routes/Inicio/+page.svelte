@@ -51,7 +51,7 @@
 		{#each posts as item}
 			<div class="row">
 				<div class="col s1">
-					<img src={item.foto} alt="" width="50" height="50" />
+					<img src={item.foto.replace('http://52.1.221.183/login/foto_perfil', '/fotos')} alt="" width="50" height="50" />
 				</div>
 				<div class="col s11">
 					<b>{item.usuario}</b>
